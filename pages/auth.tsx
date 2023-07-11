@@ -5,6 +5,7 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
+import Github from "next-auth/providers/github";
 const Auth = () => {
   const router=useRouter();
   const [email, setEmail] = useState("");
@@ -100,6 +101,7 @@ const Auth = () => {
                     <FcGoogle size={30}/>
                   </div>
                   <div 
+                    onClick={() => signIn('github',{ callbackUrl: '/' })}
                     className="
                       w-10
                       h-10
