@@ -13,7 +13,7 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState('login');
   const toggleVariant= useCallback(() =>{
-    setVariant((currentVariant)=> currentVariant =='login' ? 'register':'login');
+    setVariant((currentVariant)=> currentVariant === 'login' ? 'register':'login');
   },[]);
   
   const login= useCallback(async () => {
@@ -84,7 +84,8 @@ const Auth = () => {
               {variant == 'login' ? 'Login' :'SignUp'}
             </button>
             <div className="flex flex-row items-center gap-4 mt-8 justify-center">
-                  <div 
+                  <div
+                    onClick={() => signIn('google',{ callbackUrl: '/' })}
                     className="
                       w-10
                       h-10

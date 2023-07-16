@@ -7,7 +7,7 @@ interface InputProps {
   type?: string;
 }
 
-const Input = (React.FC<InputProps> = ({
+const Input :React.FC<InputProps> = ({
   id,
   onChange,
   value,
@@ -62,5 +62,5 @@ const Input = (React.FC<InputProps> = ({
       </label>
     </div>
   );
-});
+};
 export default Input;
