@@ -2,6 +2,7 @@ import NavbarItem from "./NavbarItem";
 import MobileMenu from "./MobileMenu";
 import { BsChevronDown } from "react-icons/bs"
 const Navbar = () => {
+    const[showMobileMenu, setShowMobileMenu ]=useState(false)
   return (
     <nav className="w-full fixed z-40">
       <div
