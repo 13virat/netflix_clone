@@ -2,7 +2,8 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/Navbar";
+import Billboard from "@/components/Billboard";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -30,6 +31,7 @@ export default function Home() {
   return (
     <>
      <Navbar />
+     <Billboard />
     </>
   );
 }
