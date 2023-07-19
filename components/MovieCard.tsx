@@ -8,7 +8,7 @@ const MovieCard: React.FC<MovieCardProps>=({
 })=>{
     return(
         <div className="group bg-zinc-900 col-span relative h-[12vw]">
-            <img className="
+            <img src={data.thumbnailUrl} alt="Thumbnail" className="
             cursor-pointer
             object-cover
             transition
@@ -21,7 +21,7 @@ const MovieCard: React.FC<MovieCardProps>=({
             w-full 
             h-{12vw}
             "
-            src={data.thumbnailUrl} alt="Thumbnail"/>
+            />
             <div
             className="
             opacity-0
@@ -40,7 +40,7 @@ const MovieCard: React.FC<MovieCardProps>=({
             group-hover:translate-x-[2vw]
             group-hover:opacity-100
             ">
-                <img className="
+                <img src={data.thumbnailUrl} alt="Thumbnail" className="
                 cursor-pointer
                 object-cover
                 transition
@@ -50,7 +50,7 @@ const MovieCard: React.FC<MovieCardProps>=({
                 w-full
                 h-[12vw]
                 "
-                src={data.thumbnailUrl} alt="Thumbnail"/>
+                />
                 <div className="
                 z-10
                 bg-zinc-800
@@ -85,8 +85,14 @@ const MovieCard: React.FC<MovieCardProps>=({
                         New <span className="text-white">2023</span>
                     </p>
                     <div className="flex flex-row mt-4 gap-2 items-center">
-                        <p>
+                        <p className="text-white text-[10px] lg:text-sm">
                             {data.duration}
+                        </p>
+
+                    </div>
+                    <div className="flex flex-row mt-4 gap-2 items-center">
+                        <p className="text-white text-[10px] lg:text-sm">
+                            {data.genre}
                         </p>
 
                     </div>
