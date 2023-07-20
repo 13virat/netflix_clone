@@ -27,7 +27,7 @@ export default async function (req:NextApiRequest,res:NextApiResponse){
                 
                 },
                 data:{
-                    favouriteIds:{
+                    favoriteIds:{
                         push:movieId,
                     }
                 }
@@ -45,13 +45,13 @@ export default async function (req:NextApiRequest,res:NextApiResponse){
             if(!existingMovie){
                 throw new Error('Invalid ID');
             }
-            const updateFavoriteIds=without(currentUser.favouriteIds,movieId);
+            const updateFavoriteIds=without(currentUser.favoriteIds,movieId);
             const updatedUser=await prismadb.user.update({
                 where:{
                     email:currentUser.email || '',
                 },
                 data:{
-                    favouriteIds:updateFavoriteIds,
+                    favoriteIds:updateFavoriteIds,
                 }
             });
             return res.status(200).json(updatedUser);
